@@ -10,7 +10,7 @@ from mobilealerts import MeasurementType
 DOMAIN: Final = "mobile_alerts"
 
 GATEWAY_DEF_NAME: Final = "MOBILEALERTS-Gateway"
-MANUFACTURER: Final = "La Crosse Tech. / TFA Dostmann"
+MANUFACTURER: Final = "La Crosse Technology LTD"
 
 CONF_GATEWAY: Final = "gateway_id"
 CONF_SEND_DATA_TO_CLOUD: Final = "send_data_to_cloud"
