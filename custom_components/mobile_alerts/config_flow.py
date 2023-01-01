@@ -61,6 +61,8 @@ class MobileAlertsConfigFlowHandler(ConfigFlow, domain=DOMAIN):
 
     VERSION = 1
 
+    _LOGGER.debug("MobileAlertsConfigFlowHandler %s", DOMAIN)
+
     def __init__(self) -> None:
         """Initialize the config flow."""
         self._gateway: Gateway | None = None
@@ -70,7 +72,7 @@ class MobileAlertsConfigFlowHandler(ConfigFlow, domain=DOMAIN):
         self, user_input: dict[str, Any] | None = None
     ) -> FlowResult:
         _LOGGER.debug("async_step_single_gateway user_input %s", user_input)
-        
+
         """Configure the gateway."""
         gateway = self._gateway
         assert gateway is not None
