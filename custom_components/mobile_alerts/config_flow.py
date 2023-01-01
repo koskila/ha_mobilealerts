@@ -69,6 +69,8 @@ class MobileAlertsConfigFlowHandler(ConfigFlow, domain=DOMAIN):
     async def async_step_single_gateway(
         self, user_input: dict[str, Any] | None = None
     ) -> FlowResult:
+        _LOGGER.debug("async_step_single_gateway user_input %s", user_input)
+        
         """Configure the gateway."""
         gateway = self._gateway
         assert gateway is not None
@@ -107,6 +109,8 @@ class MobileAlertsConfigFlowHandler(ConfigFlow, domain=DOMAIN):
 
         gateways = []
         ip_address = await async_get_source_ip(self.hass)
+
+        _LOGGER.debug("async_step_multiple_gateways ip_address %s", ip_address)
         try:
             gateways = await Gateway.discover(ip_address)
         except socket.error as err:
